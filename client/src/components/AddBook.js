@@ -109,7 +109,7 @@ function AddBook() {
             {displayAuthors()}
           </select>
         </div>
-        <button type="submit">{loadingAdd ? "Adding..." : "+"}</button>
+        <button type="submit">{loadingAdd ? "..." : "+"}</button>
       </form>
     </div>
   );

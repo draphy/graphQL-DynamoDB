@@ -72,7 +72,7 @@ function AddAuthor() {
         </div>
         <div className="field" style={{ height: "2.2rem" }}></div>
 
-        <button type="submit">{loading ? "Adding..." : "+"}</button>
+        <button type="submit">{loading ? "..." : "+"}</button>
       </form>
     </div>
   );
