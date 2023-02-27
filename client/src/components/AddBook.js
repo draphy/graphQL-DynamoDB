@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLazyQuery, useQuery, useMutation } from "@apollo/client";
+import {  useQuery, useMutation } from "@apollo/client";
 import { getAuthorsQuery } from "../query/author";
 import { addBookMutation, getBooksQuery } from "../query/book";
 import { toast } from "react-toastify";
@@ -32,7 +32,28 @@ function AddBook() {
         draggable: true,
       });
     }
-  }, [dataAdd]);
+
+    if (errorAdd) {
+      toast.error(errorAdd.message, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+    if (error) {
+      toast.error(error.message, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+  }, [dataAdd, errorAdd, error]);
 
   function displayAuthors() {
     if (loading) {
@@ -89,24 +110,6 @@ function AddBook() {
           </select>
         </div>
         <button type="submit">{loadingAdd ? "Adding..." : "+"}</button>
-        {errorAdd &&
-          toast.error(errorAdd.message, {
-            position: toast.POSITION.TOP_CENTER,
-            autoClose: 2000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          })}
-        {error &&
-          toast.error(error.message, {
-            position: toast.POSITION.TOP_CENTER,
-            autoClose: 2000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          })}
       </form>
     </div>
   );

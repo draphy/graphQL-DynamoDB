@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLazyQuery, useQuery, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { addAuthorMutation, getAuthorsQuery } from "../query/author";
 import { toast } from "react-toastify";
 
@@ -13,7 +13,7 @@ function AddAuthor() {
     },
     onCompleted: () => {
       setName("");
-      setAge(0);
+      setAge("");
     },
   });
 

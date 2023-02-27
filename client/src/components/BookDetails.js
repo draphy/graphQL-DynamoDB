@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getBookQuery } from "../query/book";
-import { useQuery, gql, useLazyQuery } from "@apollo/client";
+import { useQuery  } from "@apollo/client";
 import { toast } from "react-toastify";
 
 function BookDetails({ id }) {
@@ -16,7 +16,17 @@ function BookDetails({ id }) {
     if (data) {
       setBook(data.book);
     }
-  }, [data]);
+    if (error) {
+      toast.error(error.message, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+  }, [data, error]);
 
   return (
     <div id="book-details">
@@ -39,15 +49,6 @@ function BookDetails({ id }) {
       ) : (
         <div>No book selected...</div>
       )}
-      {error &&
-        toast.error(error.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-        })}
     </div>
   );
 }

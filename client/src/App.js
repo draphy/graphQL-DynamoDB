@@ -1,14 +1,14 @@
 import React from "react";
 import BookList from "./components/BookList";
 import AddBook from "./components/AddBook";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AddAuthor from "./components/AddAuthor";
 
 function App() {
   return (
     <div id="main">
-         <header className="footer">
+      <header className="footer">
         &copy; David Raphi {new Date().getFullYear()}
       </header>
       <ToastContainer />
@@ -19,7 +19,6 @@ function App() {
         <AddBook />
         <AddAuthor />
       </div>
-   
     </div>
   );
 }

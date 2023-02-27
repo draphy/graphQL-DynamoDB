@@ -51,7 +51,7 @@ code {
     bottom: 0;
     width: 400px;
     display: flex;
-    gap: 10rem;
+    gap: 5rem;
 }
 
 #add-book {
