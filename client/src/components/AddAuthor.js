@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { addAuthorMutation, getAuthorsQuery } from "../query/author";
 import { toast } from "react-toastify";
 
-function AddAuthor() {
+function AddAuthor({setModalIsOpen}) {
   const [authorName, setName] = useState("");
   const [age, setAge] = useState("");
 
@@ -14,6 +14,7 @@ function AddAuthor() {
     onCompleted: () => {
       setName("");
       setAge("");
+      setModalIsOpen(false)
     },
   });
 

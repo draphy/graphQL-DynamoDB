@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {  useQuery, useMutation } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { getAuthorsQuery } from "../query/author";
 import { addBookMutation, getBooksQuery } from "../query/book";
 import { toast } from "react-toastify";
 
-function AddBook() {
+function AddBook({ setModalIsOpen }) {
   const [bookName, setBookName] = useState("");
   const [genre, setGenre] = useState("");
   const [authorId, setAuthorId] = useState("");
@@ -19,6 +19,7 @@ function AddBook() {
         setBookName("");
         setGenre("");
         setAuthorId("");
+        setModalIsOpen(false);
       },
     });
   useEffect(() => {
