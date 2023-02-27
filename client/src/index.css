@@ -43,13 +43,22 @@ code {
     color: #880E4F;
 }
 
-form{
+.formReal{
     background: #fff;
     padding: 20px;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 400px;
+    display: flex;
+    gap: 10rem;
+}
+
+#add-book {
+  width: 400px;
+}
+#add-author {
+  width: 400px;
 }
 
 form .field{
@@ -69,7 +78,7 @@ form input, form select{
     box-sizing: border-box;
 }
 
-form button{
+.formBook button{
     color: #fff;
     font-size: 2em;
     background: #AD1457;
@@ -77,10 +86,20 @@ form button{
     padding: 0 10px;
     border-radius: 50%;
     cursor: pointer;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
+
 }
+
+.formAuthor button{
+  color: #fff;
+  font-size: 2em;
+  background: #AD1457;
+  border: 0;
+  padding: 0 10px;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
 
 #book-details{
     position: fixed;

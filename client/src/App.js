@@ -1,21 +1,26 @@
 import React from "react";
 import BookList from "./components/BookList";
 import AddBook from "./components/AddBook";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AddAuthor from "./components/AddAuthor";
 
 function App() {
   return (
-
-      <div id="main">
-            <ToastContainer />
-        <h1>Reading List</h1>
-        <BookList />
+    <div id="main">
+         <header className="footer">
+        &copy; David Raphi {new Date().getFullYear()}
+      </header>
+      <ToastContainer />
+      <h1>My Reading List</h1>
+      <BookList />
+      <div className="formReal">
+        {" "}
         <AddBook />
+        <AddAuthor />
       </div>
-
+   
+    </div>
   );
 }
 
