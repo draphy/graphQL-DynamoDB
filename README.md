@@ -15,13 +15,11 @@ This project uses environment variables to store sensitive information, such as 
 ```
 NODE_ENV = 'development'
 PORT = 4000
-MONGO_URL = "YOUR_MONGODB_CONNECTION_STRING"
 AWSAccessKeyId = "YOUR AWS ACCESS KEY ID"
 AWSSecretKey = "YOUR AWS SECRET KEY"
 region = "YOUR AWS DYNAMO DB REGION"
 
 ```
-Make sure to replace YOUR_MONGODB_CONNECTION_STRING with your actual MongoDB connection string.
 
 ## Usage
 
