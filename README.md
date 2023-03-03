@@ -1,6 +1,6 @@
 # GraphQL Project
 
-This project is a simple web application that uses GraphQL to fetch and display data from a server. It was built using React, Node.js, Express, MongoDB and Apollo Server.
+This project is a simple web application that uses GraphQL to fetch and display data from a server. It was built using React, Node.js, Express, DynamoDB and Apollo Server.
 
 ## Installation
 
@@ -16,6 +16,9 @@ This project uses environment variables to store sensitive information, such as 
 NODE_ENV = 'development'
 PORT = 4000
 MONGO_URL = "YOUR_MONGODB_CONNECTION_STRING"
+AWSAccessKeyId = "YOUR AWS ACCESS KEY ID"
+AWSSecretKey = "YOUR AWS SECRET KEY"
+region = "YOUR AWS DYNAMO DB REGION"
 
 ```
 Make sure to replace YOUR_MONGODB_CONNECTION_STRING with your actual MongoDB connection string.
@@ -30,7 +33,7 @@ open your web browser and navigate to http://localhost:3000 to view the applicat
 
 - View a list of books with their titles, authors, and genres
 - Click on a book to view its details, including other books by the same author
-- Add a new book to the list by filling out a form with its title, author, and genre
+- Add a new book and author to the list by filling out a popup form 
 
 ## Technologies Used
 
@@ -39,7 +42,7 @@ open your web browser and navigate to http://localhost:3000 to view the applicat
 - GraphQL
 - Apollo Client
 - Express.js
-- MongoDB
-- Mongoose
+- Dynamo DB
+- AWS
 
 

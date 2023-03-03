@@ -61,7 +61,7 @@ function AddBook({ setModalIsOpen }) {
       return <option disabled>Loading authors</option>;
     } else {
       return data.authors.map((author) => (
-        <option key={author.id} value={author.id}>
+        <option key={author.Id} value={author.Id}>
           {author.name}
         </option>
       ));

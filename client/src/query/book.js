@@ -9,7 +9,7 @@ export const getBooksQuery = gql`
   {
     books {
       name
-      id
+      Id
     }
   }
 `;
@@ -23,20 +23,20 @@ export const addBookMutation = gql`
 `;
 
 export const getBookQuery = gql`
-query GetBook($id: ID){
-    book(id: $id) {
-        id
+  query GetBook($Id: ID) {
+    book(Id: $Id) {
+      Id
+      name
+      genre
+      author {
+        Id
         name
-        genre
-        author {
-            id
-            name
-            age
-            books {
-                name
-                id
-            }
+        age
+        books {
+          name
+          Id
         }
+      }
     }
-}
+  }
 `;

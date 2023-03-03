@@ -134,3 +134,24 @@ button {
 .close:hover {
   color: #f44336;
 }
+
+@keyframes slide-in {
+  from {
+    right: -100%;
+    transform: translateX(100%);
+  }
+  to {
+    right: 0;
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-out {
+  from {
+    right: 0;
+    transform: translateX(0%);
+  }
+  to {
+    right: -100%;
+    transform: translateX(100%);
+  }
+}

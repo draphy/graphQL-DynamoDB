@@ -32,8 +32,8 @@ function BookList() {
       <ul id="book-list">
         {loading
           ? "Loading..."
-          : books.map(({ id, name }) => (
-              <li key={id} onClick={() => setSelectId(id)}>
+          : books.map(({ Id, name }) => (
+              <li key={Id} onClick={() => setSelectId(Id)}>
                 {name}
               </li>
             ))}

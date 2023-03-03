@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getBookQuery } from "../query/book";
-import { useQuery  } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { toast } from "react-toastify";
 
 function BookDetails({ id }) {
@@ -8,7 +8,7 @@ function BookDetails({ id }) {
 
   const { loading, error, data } = useQuery(getBookQuery, {
     variables: {
-      id: id,
+      Id: id,
     },
   });
 
@@ -30,24 +30,20 @@ function BookDetails({ id }) {
 
   return (
     <div id="book-details">
-      {book ? (
-        loading ? (
-          "loading..."
-        ) : (
-          <div>
-            <h2>{book.name}</h2>
-            <p>Genre : {book.genre}</p>
-            <p>Author : {book.author.name}</p>
-            <p>All books by this author:</p>
-            <ul className="other-books">
-              {book.author.books.map((item) => {
-                return <li key={item.id}>{item.name}</li>;
-              })}
-            </ul>
-          </div>
-        )
+      {book && !loading ? (
+        <div>
+          <h2>{book.name}</h2>
+          <p>Genre : {book.genre}</p>
+          <p>Author : {book.author.name}</p>
+          <p>All books by this author:</p>
+          <ul className="other-books">
+            {book.author.books.map((item) => {
+              return <li key={item.Id}>{item.name}</li>;
+            })}
+          </ul>
+        </div>
       ) : (
-        <div>No book selected...</div>
+        <div> {loading ? "loading..." : "No book selected... "} </div>
       )}
     </div>
   );

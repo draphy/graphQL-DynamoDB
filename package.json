@@ -17,6 +17,7 @@
     "nodemon": "^2.0.6"
   },
   "dependencies": {
+    "aws-sdk": "^2.1326.0",
     "react-modal": "^3.16.1"
   }
 }
